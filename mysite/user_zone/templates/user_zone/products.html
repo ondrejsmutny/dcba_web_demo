@@ -1,0 +1,25 @@
+<!-- Products -->
+{% extends "base.html" %}
+{% block content %}
+    <article class="form_override">
+        <h1 class="text_orange">StatS: 2023 čtvrtletní P 6-04 (a)</h1>
+        <h2 class="text_blue">Desktopová aplikace pro automatizované vyplňování výkazů pro Český statistický úřad.
+            Načte obratovou předvahu z Excelu, vypočítá vykazované ukazatele podle metodiky a uloží je do výkazu ve
+            formátu PDF. To celé je hotové za několik minut namísto hodin při ručním zpracování.</h2>
+        <h2 class="text_blue">Klikněte na "Objednat" a odešleme Vám email s intrukcemi. Pro objednání musíte být
+            přihlášeni. Je dobré mít vyplněno co nejvíce údajů pro usnadnění komunikace a fakturace.</h2>
+        <h2 class="text_blue">Upozornění: Verze aplikace pro rok 2023. Nejsme plátci DPH.</h2>
+        <h2 class="text_blue">Možno domluvit se na zkušební licenci zdarma.</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="buttons_inline">
+                <button type="submit" name="StatS_2023_quarter_P_6_04_a_manual.pdf">Jak to funguje?</button>
+                <button type="submit" name="2023_quarter_P_6_04_a_one_year">Objednat na 1 rok za 2 700,- Kč</button>
+                <button type="submit" name="2023_quarter_P_6_04_a_three_months">Objednat na 3 měsíce za 1 200,- Kč</button>
+                {% if user.is_authenticated %}
+                <button type="submit" name="StatS_2023_quarter_P_6_04_a.zip">Stáhnout aplikaci</button>
+                {% endif %}
+            </div>
+        </form>
+    </article>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% autoescape off %}
+Dobrý den,
+
+Obdrželi jsme objednávku číslo {{ purchase_order_number }} produktu {{ product_name_info }} s licencí na {{ licence_duration_info }}.
+
+Proveďte prosím následující kroky, abyste produkt mohli začít používat:
+
+1. Pošlete platbu dle následujících instrukcí:
+    Číslo bankovního účtu: 783712003/5500
+    Variabilní symbol: {{ purchase_order_number }}
+    Částka: {{ price_info }} (Nejsme plátci DPH)
+
+2. Po obdržení platby obratem aktivujeme licenci a pošleme Vám daňový doklad
+
+3. Stáhněte si aplikaci z našeho webu {{ protocol }}://{{domain}}
+
+4. Spusťte aplikaci a zadejte přihlašovací údaje (Stejné jako při registraci na našem webu)
+
+5. Aplikace je připravena k použití
+
+
+
+Pokud jste tuto objednávku neprovedli, můžete tento email ignorovat.
+
+S pozdravem,
+D_C_B_A s.r.o.
+
+{% endautoescape %}

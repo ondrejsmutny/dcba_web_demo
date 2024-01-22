@@ -1,0 +1,23 @@
+<!-- Page for main overview of users on a list. Users can be filtered and looked for. -->
+{% extends "base.html" %}
+{% block content %}
+{% load render_table from django_tables2 %}
+{% load bootstrap5 %}
+<h5 class="h5">Administrace osobních údajů</h5>
+<hr>
+<div class="main_content">
+    <p>Nový uživatel se vytvoří jeho zaregistrováním. Vyplnění osobních údajů uživatele se provede tlačítkem Editace.</p>
+    {% if filter %}
+    <h6>Vyhledávání a filtrace</h6>
+    <form action="" method="get" class="form form-inline">
+        {% bootstrap_form filter.form layout='inline' %}
+        {% bootstrap_button 'Filtrovat' %}
+    </form>
+    <p></p>
+    <h6>Seznam</h6>
+    <div class="table">
+        {% endif %}
+        {% render_table table %}
+    </div>
+</div>
+{% endblock %}

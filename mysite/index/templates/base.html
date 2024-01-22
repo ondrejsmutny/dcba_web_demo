@@ -1,0 +1,58 @@
+<!-- Base template shown on all pages -->
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type = "text/css"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>D_C_B_A</title>
+        <meta name="description" content="Zabýváme se vývojem software a konzultační činností. Zaměřujeme se na oblast
+         businessu, controllingu, financí a účetnictví. Pomáháme firmám automatizovat a optimalizovat procesy. Prodáváme
+         vlastní softwarové produkty, které redukují rutinní činnosti.">
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv-printshiv.js"></script>
+        <![endif]-->
+    </head>
+    <body id="base_body">
+        <nav class="nav_area">
+            <ul class="nav_menu">
+                <li id="logo_container"><img id="logo" src="{% static 'logo/logo_for.PNG' %}"></li>
+                <li class="nav_item"><a href={% url "index" %}>Domů/Kontakt</a></li>
+                <li class="nav_item"><a href={% url "services" %}>Služby</a></li>
+                <li class="nav_item"><a href={% url "products" %}>Produkty</a></li>
+                {% if not user.is_authenticated %}<li class="nav_item"><a href={% url "register" %}>Registrace</a></li>{% endif %}
+                {% if not user.is_authenticated %}<li class="nav_item"><a href={% url "login" %}>Přihlášení</a></li>{% endif %}
+                {% if user.is_authenticated %}<li class="nav_item"><a href={% url "edit_general_data" %}>Osobní údaje</a></li>{% endif %}
+                {% if user.is_authenticated %}<li class="nav_item"><a href={% url "password_reset" %}>Změna hesla</a></li>{% endif %}
+                {% if user.is_authenticated %}<li class="nav_item"><a href={% url "logout" %}>Odhlášení</a></li>{% endif %}
+                <li class="info_pane">
+                <!-- Logged user info -->
+                {% if request.user.is_authenticated %}
+                    Přihlášen: {{request.user.email}}
+                {% endif %}
+                <!-- Checking message type and rendering it -->
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == "error" %}
+                            Chyba: {{message}}
+                        {% else %}
+                            Info: {{message}}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                </li>
+            </ul>
+        </nav>
+        <div class="block_content">
+            <div class="content_width">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+      <footer></footer>
+    </body>
+</html>

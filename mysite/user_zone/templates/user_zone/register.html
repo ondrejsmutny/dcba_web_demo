@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Register-->
+<div class="container">
+	<p class="text_orange">Registrace</p>
+	<form method="POST" class="form_override">
+		{% csrf_token %}
+		{{ register_form|crispy }}
+		<button type="submit">Registrovat</button>
+	</form>
+</div>
+
+{% endblock %}

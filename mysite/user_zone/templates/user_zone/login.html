@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Login-->
+<div class="container">
+  <p class="text_orange">Přihlášení</p>
+  <form method="POST" class="form_override">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <div class="buttons_inline_space_between">
+      <button type="submit">Přihlásit</button>
+      <button><a href="/user_zone/password_reset">Zapomenuté heslo</a></button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

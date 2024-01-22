@@ -1,0 +1,14 @@
+# After installing all requirements, reinstall bootstrap using command "pip install django-bootstrap-v5"
+# python>=3.10
+
+Django==4.1.2
+asgiref==3.6.0
+cryptography==39.0.2
+django-bootstrap5==22.2
+django-crispy-forms==2.0a1
+django-filter==22.1
+django-tables2==2.4.1
+sqlparse==0.4.3
+tzdata==2022.7
+django-bootstrap-v5==1.0.11
+crispy-bootstrap4==2022.1

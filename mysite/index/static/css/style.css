@@ -1,0 +1,258 @@
+:root{
+    --black_logo: #2B2B2B;
+    --blue_logo: #8898A9;
+    --orange_logo: #A86D31;
+}
+@font-face{
+    font-family: "JetBrainsMono";
+    src: url("../fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-Medium.ttf") format("truetype");
+}
+@font-face{
+    font-family: "JetBrainsMono_blue";
+    src: url("../fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-Medium.ttf") format("truetype");
+    color: var(--blue_logo);
+}
+@font-face{
+    font-family: "JetBrainsMono_orange";
+    src: url("../fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-Medium.ttf") format("truetype");
+    color: var(--orange_logo);
+}
+html{
+    background: var(--black_logo);
+}
+#base_body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black_logo);
+    width: 95vw;
+    margin: 0 auto;
+    font: 15px "JetBrainsMono";
+}
+h1, h2, h3, h4, h5, h6{
+    font-size: 1em;
+}
+.nav_area{
+    border-bottom: 2px solid var(--blue_logo);
+    display: block;
+    width: 100%;
+    background: var(--black_logo);
+    top: 0px;
+}
+.nav_menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#logo_container{
+    flex-shrink: 0;
+    max-width: 95vw;
+}
+#logo{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.nav_item{
+    background-color: var(--blue_logo);
+    font-family: "JetBrainsMono_orange";
+    font-weight: bold;
+    flex-shrink: 0;
+    width: 100%;
+}
+.nav_item:hover{
+    background-color: var(--orange_logo);
+}
+.nav_menu a{
+    text-decoration: none;
+    color: var(--black_logo);
+    display: block;
+    line-height: 3em;
+    padding: 0 5px;
+    margin: 5px;
+}
+.nav_menu a:hover{
+    text-decoration: none;
+    color: var(--black_logo);
+}
+.info_pane{
+    color: var(--orange_logo);
+    font-family: "JetBrainsMono_orange";
+    flex-shrink: 0;
+    width: 100%;
+    line-height: 2em;
+    padding: 0 2px;
+    margin: 2px;
+}
+.block_content{
+    padding-bottom: 100px;
+    padding-top: 30px;
+    background-color: var(--black_logo);
+    min-height: 90vh;
+    margin: 0 auto;
+}
+.content_width{
+    width: 95vw;
+}
+footer{
+    background-color: var(--blue_logo);
+    color: var(--black_logo);
+    bottom: 0px;
+    width: 95vw;
+    text-align: center;
+    height: 30px;
+    vertical-align: middle;
+    font-family: "JetBrainsMono_orange";
+    font-weight: bold;
+}
+.text_orange{
+    font-family: "JetBrainsMono_orange";
+    color: var(--orange_logo);
+}
+.text_blue{
+    font-family: "JetBrainsMono_blue";
+    color: var(--blue_logo);
+}
+.form_override div{
+    margin-bottom: 2em;
+}
+.form_override label{
+    font-family: "JetBrainsMono_blue";
+    color: var(--blue_logo);
+    margin-bottom: 1em;
+}
+.form_override input,
+.form_override input:focus,
+.form_override select,
+.form_override select:focus{
+    font-family: "JetBrainsMono_orange";
+    color: var(--orange_logo);
+    margin-bottom: 1em;
+    border-radius: 0;
+    border: 2px solid var(--orange_logo);
+    box-shadow: 0 var(--orange_logo);
+    background: var(--black_logo);
+}
+.form_override input:-webkit-autofill,
+.form_override input:-webkit-autofill:hover,
+.form_override input:-webkit-autofill:active,
+.form_override input:-webkit-autofill:focus,
+.form_override select:-webkit-autofill,
+.form_override select:-webkit-autofill:hover,
+.form_override select:-webkit-autofill:active,
+.form_override select:-webkit-autofill:focus{
+    transition: background-color 9999s ease-in-out 0s;
+    color: var(--orange_logo) !important;
+    -webkit-text-fill-color: var(--orange_logo) !important;
+}
+.form_override small{
+    font-family: "JetBrainsMono_blue";
+    color: var(--blue_logo) !important;
+}
+.form_override button{
+    background-color: var(--blue_logo);
+    font-family: "JetBrainsMono_orange";
+    font-weight: bold;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: var(--black_logo);
+    display: block;
+    line-height: 3em;
+    margin-top: 5px;
+    padding: 0 10px;
+    border-radius: 0;
+    border: 0px solid var(--blue_logo);
+    box-shadow: 0 var(--blue_logo);
+}
+.form_override button:hover{
+    background-color: var(--orange_logo);
+    text-decoration: none;
+    color: var(--black_logo);
+    border-radius: 0;
+    border: 0px solid var(--blue_logo);
+    box-shadow: 0 var(--blue_logo);
+}
+.form_override button a,
+.form_override button a:hover{
+    text-decoration: none;
+    color: var(--black_logo);
+}
+.buttons_inline_space_between button{
+    flex-shrink: 0;
+    width: 100%;
+}
+@media (min-width: 600px) {
+    #base_body{
+        font: 12.5px "JetBrainsMono";
+        width: 90vw;
+    }
+    #logo_container{
+        width: 442px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .nav_area{
+        position: sticky;
+    }
+    .nav_item{
+        width: auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .nav_menu a{
+        line-height: 2em;
+        padding: 0 2px;
+        margin: 2px;
+    }
+    .info_pane{
+        width: auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .content_width{
+        width: 70vw;
+    }
+    footer{
+        width: 90vw;
+        position: sticky;
+    }
+    .form_override input,
+    .form_override input:focus,
+    .form_override select,
+    .form_override select:focus{
+        font: 12.5px "JetBrainsMono";
+    }
+    .form_override small{
+        font: 12.5px "JetBrainsMono";
+    }
+    .form_override button,
+    .form_override button:hover{
+        font-size: 12.5px;
+        line-height: 2em;
+        padding: 4px;
+        width: auto;
+    }
+    .buttons_inline_space_between{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .buttons_inline_space_between button{
+        width: auto;
+        line-height: 2em;
+        padding: 4px;
+        margin-right: 2px;
+    }
+    .buttons_inline{
+        display: flex;
+        flex-direction: row;
+    }
+    .buttons_inline button{
+        width: auto;
+        line-height: 2em;
+        padding: 4px;
+        margin-right: 8px;
+    }
+}
